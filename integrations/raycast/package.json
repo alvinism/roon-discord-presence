@@ -4,7 +4,7 @@
   "title": "Roon Discord Presence",
   "description": "See what Roon is showing on your Discord status, and start, stop or restart roon-discord-presence.",
   "icon": "icon.png",
-  "author": "YCHX",
+  "author": "alvinism",
   "categories": [
     "Media",
     "Applications"

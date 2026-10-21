@@ -100,7 +100,10 @@ export default function Command() {
   const playing = status?.state === "playing" ? status.playing : null;
   const lines: { title: string; icon?: Image.ImageLike }[] = playing
     ? [
-        { title: playing.title, icon: playing.cover ?? Icon.Music },
+        {
+          title: playing.title,
+          icon: playing.cover ? { source: playing.cover, mask: Image.Mask.RoundedRectangle } : Icon.Music,
+        },
         { title: playing.artist, icon: Icon.Person },
         { title: playing.album, icon: Icon.Cd },
         {
