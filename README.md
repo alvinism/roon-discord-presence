@@ -1,4 +1,8 @@
-# roon-discord-presence
+<p align="center"><img src="https://raw.githubusercontent.com/alvinism/roon-discord-presence/main/assets/icon.png" width="128" height="128" alt=""></p>
+<h1 align="center">roon-discord-presence</h1>
+<p align="center">
+  <b>English</b> · <a href="https://github.com/alvinism/roon-discord-presence/blob/main/README.ja.md">日本語</a> · <a href="https://github.com/alvinism/roon-discord-presence/blob/main/README.zh-Hant.md">繁體中文</a> · <a href="https://github.com/alvinism/roon-discord-presence/blob/main/README.zh-Hans.md">简体中文</a>
+</p>
 
 Show what [Roon](https://roon.app) is playing as your **Discord Rich Presence** — "Listening to …"
 with title, artist, album art and a progress bar.
@@ -21,6 +25,9 @@ macOS only for now.
 uv tool install roon-discord-presence            # or: pipx install roon-discord-presence
 uv tool install 'roon-discord-presence[s3]'      # with S3/R2 cover upload support
 ```
+
+> Not on PyPI yet? Install straight from GitHub:
+> `uv tool install 'roon-discord-presence[s3] @ git+https://github.com/alvinism/roon-discord-presence'`
 
 Then run the guided setup:
 
@@ -86,7 +93,9 @@ Each album is uploaded once (named by content hash) and reused afterwards.
 ## Front-ends
 
 - **Alfred** — [`integrations/alfred`](integrations/alfred): status list with start/stop/restart.
-  Build with `python integrations/alfred/build.py` and open the `.alfredworkflow` from `dist/`.
+  Download `Roon-Discord-Presence.alfredworkflow` from the
+  [latest release](https://github.com/alvinism/roon-discord-presence/releases/latest), or build it
+  with `python integrations/alfred/build.py` (output in `dist/`).
 
 ## Files
 

@@ -86,6 +86,7 @@ def main():
             info = zipfile.ZipInfo(name)
             info.external_attr = 0o755 << 16
             z.writestr(info, (HERE / name).read_bytes())
+        z.write(ROOT / "assets/icon.png", "icon.png")
     print(out)
 
 
