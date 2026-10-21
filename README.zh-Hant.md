@@ -15,7 +15,7 @@
   也可以完全不使用封面。
 - **自動恢復**——Roon 重新啟動、Discord 重新啟動或應用程式內更新後，都會自動重新連線。
 - **在 Roon 中顯示狀態**——於「設定 → 擴充功能」顯示目前狀態，另提供 `status --json` 供啟動器使用
-  （內附 Alfred 工作流程；Raycast 等也可以利用同一份 JSON 整合）。
+  （內附 Alfred 工作流程與 Raycast 擴充功能；其他工具也可以利用同一份 JSON 整合）。
 
 目前僅支援 macOS。
 
@@ -26,8 +26,6 @@ uv tool install roon-discord-presence            # 或：pipx install roon-disco
 uv tool install 'roon-discord-presence[s3]'      # 需要上傳封面到 S3/R2 時
 ```
 
-> 尚未發布到 PyPI？可以直接從 GitHub 安裝：
-> `uv tool install 'roon-discord-presence[s3] @ git+https://github.com/alvinism/roon-discord-presence'`
 
 接著執行引導式設定：
 
@@ -91,6 +89,9 @@ Discord 只能從公開網路取得圖片，因此封面必須發布到 Discord 
 
 ## 前端整合
 
+- **Raycast**——[`integrations/raycast`](integrations/raycast)：在選單列顯示目前 Discord 上的曲目，
+  另有狀態畫面可查看封面、連線狀態與區域。在該資料夾執行 `npm install && npm run dev`
+  即可加入 Raycast。
 - **Alfred**——[`integrations/alfred`](integrations/alfred)：狀態清單與啟動／停止／重新啟動。
   可從[最新版本](https://github.com/alvinism/roon-discord-presence/releases/latest)下載
   `Roon-Discord-Presence.alfredworkflow`，或執行 `python integrations/alfred/build.py` 自行建置

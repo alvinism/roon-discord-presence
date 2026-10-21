@@ -15,7 +15,7 @@ with title, artist, album art and a progress bar.
   Backblaze B2, MinIO) or your own upload script. Or skip covers entirely.
 - **Self-healing** — survives Roon restarts, Discord restarts and in-app Discord updates.
 - **Status line in Roon** under Settings → Extensions, plus `status --json` for launchers
-  (an Alfred workflow is included; Raycast and others can build on the same JSON).
+  (Alfred workflow and Raycast extension included; other tools can build on the same JSON).
 
 macOS only for now.
 
@@ -26,8 +26,6 @@ uv tool install roon-discord-presence            # or: pipx install roon-discord
 uv tool install 'roon-discord-presence[s3]'      # with S3/R2 cover upload support
 ```
 
-> Not on PyPI yet? Install straight from GitHub:
-> `uv tool install 'roon-discord-presence[s3] @ git+https://github.com/alvinism/roon-discord-presence'`
 
 Then run the guided setup:
 
@@ -92,6 +90,9 @@ Each album is uploaded once (named by content hash) and reused afterwards.
 
 ## Front-ends
 
+- **Raycast** — [`integrations/raycast`](integrations/raycast): a menu bar item with the track
+  on your Discord status, plus a status view with cover, connections and zones. Run
+  `npm install && npm run dev` in that folder to add it to Raycast.
 - **Alfred** — [`integrations/alfred`](integrations/alfred): status list with start/stop/restart.
   Download `Roon-Discord-Presence.alfredworkflow` from the
   [latest release](https://github.com/alvinism/roon-discord-presence/releases/latest), or build it

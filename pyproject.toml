@@ -37,6 +37,9 @@ build-backend = "hatchling.build"
 [tool.hatch.version]
 path = "src/roon_discord_presence/__init__.py"
 
+[tool.hatch.build.targets.sdist]
+exclude = ["integrations/raycast", "dist"]
+
 [dependency-groups]
 dev = ["pytest>=8", "ruff>=0.6"]
 

@@ -15,6 +15,8 @@ Roon now-playing → Discord Rich Presence. Python ≥3.11, uv, macOS (launchd) 
   - `daemon.py` — main loop, Roon status line, `status.json`; `service.py` — LaunchAgent;
     `cli.py` — commands; `config.py` — TOML + `keychain:`/`env:` secret refs.
 - `integrations/alfred/` — `control.sh` + `status.js` (JXA, no Python needed), `build.py`.
+- `integrations/raycast/` — Raycast extension (menu bar + status view) calling the CLI;
+  `npm install && npm run dev`, `npx ray build -e dist`. `author` must be a Raycast username.
 - `docs/status-json.md` is the contract for front-ends; bump `schema` on breaking changes.
 
 ## Commands
@@ -28,6 +30,6 @@ Roon now-playing → Discord Rich Presence. Python ≥3.11, uv, macOS (launchd) 
 - Running a second Roon client with the same extension id kicks the first one off Roon.
 
 ## Roadmap
-v0.2: `http` provider + Cloudflare Worker / Docker cover services, Raycast extension, SwiftBar
+v0.2: `http` provider + Cloudflare Worker / Docker cover services, SwiftBar
 plugin, Roon settings page (com.roonlabs.settings), Linux (systemd). Later: SwiftUI menu bar
 app, Homebrew tap, Windows.

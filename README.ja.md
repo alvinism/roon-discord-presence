@@ -15,7 +15,7 @@
   Backblaze B2、MinIO）や自作のアップロードスクリプトに対応。ジャケットなしでも使えます。
 - **自動復旧** — Roon の再起動、Discord の再起動やアプリ内アップデートの後も自動で再接続します。
 - **Roon 内にステータス表示** — 設定 → エクステンションに現在の状態を表示。ランチャー向けに
-  `status --json` も用意しています（Alfred ワークフロー同梱。Raycast なども同じ JSON で連携可能）。
+  `status --json` も用意しています（Alfred ワークフローと Raycast 拡張機能を同梱。他のツールも同じ JSON で連携可能）。
 
 現在は macOS のみ対応です。
 
@@ -26,8 +26,6 @@ uv tool install roon-discord-presence            # または: pipx install roon-
 uv tool install 'roon-discord-presence[s3]'      # S3/R2 へのジャケットアップロードを使う場合
 ```
 
-> まだ PyPI に公開されていない場合は GitHub から直接インストールできます:
-> `uv tool install 'roon-discord-presence[s3] @ git+https://github.com/alvinism/roon-discord-presence'`
 
 続いてガイド付きセットアップを実行します:
 
@@ -92,6 +90,9 @@ Discord はインターネット上の画像しか取得できないため、ジ
 
 ## フロントエンド
 
+- **Raycast** — [`integrations/raycast`](integrations/raycast): Discord に表示中の曲をメニューバーに表示し、
+  ジャケット・接続状態・ゾーンを確認できるステータス画面も備えています。そのフォルダで
+  `npm install && npm run dev` を実行すると Raycast に追加されます。
 - **Alfred** — [`integrations/alfred`](integrations/alfred): 状態表示と起動・停止・再起動。
   [最新リリース](https://github.com/alvinism/roon-discord-presence/releases/latest)から
   `Roon-Discord-Presence.alfredworkflow` をダウンロードするか、
