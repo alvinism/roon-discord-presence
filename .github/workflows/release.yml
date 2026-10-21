@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v10.3.0
       - name: Check tag matches package version
         run: |
           version=$(uv run --no-project python -c "import re,pathlib;print(re.search(r'__version__ = \"(.+?)\"', pathlib.Path('src/roon_discord_presence/__init__.py').read_text())[1])")
