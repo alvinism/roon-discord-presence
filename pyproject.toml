@@ -1,0 +1,51 @@
+[project]
+name = "roon-discord-presence"
+dynamic = ["version"]
+description = "Show what Roon is playing as your Discord Rich Presence (unofficial)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "alvinism" }]
+keywords = ["roon", "discord", "rich-presence", "music", "now-playing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+dependencies = [
+    "pypresence>=4.6,<5",
+    "websocket-client>=1.6,<2",
+]
+
+[project.optional-dependencies]
+s3 = ["boto3>=1.35,<2"]
+
+[project.scripts]
+roon-discord-presence = "roon_discord_presence.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/alvinism/roon-discord-presence"
+Issues = "https://github.com/alvinism/roon-discord-presence/issues"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/roon_discord_presence/__init__.py"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
